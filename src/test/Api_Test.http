@@ -1,0 +1,206 @@
+###                         /*  category test  */
+###            get category
+GET http://localhost:8080/api/v1/category/get-all
+
+###            add category
+POST http://localhost:8080/api/v1/category/add
+Content-Type: application/json
+
+{
+  "name": "tekinga beraman"
+}
+
+###            add sub category
+POST http://localhost:8080/api/v1/category/add?parentId=4a0a37b4-4cf7-4407-b5e9-613fbf4e4130
+Content-Type: application/json
+
+{
+  "name": "Audiotexnika"
+}
+
+###            delete category
+DELETE http://localhost:8080/api/v1/category/delete/2fb5112b-b55b-4627-99b1-f7f4772c2dc2
+
+###            edite category
+PUT http://localhost:8080/api/v1/category/edite/4247cc86-c167-4336-b30f-3803e6e02459
+Content-Type: application/json
+
+{
+  "name": "test"
+}
+
+###                         /*  region test  */
+###            get region
+GET http://localhost:8080/api/v1/Region/get-all
+
+###            add region
+POST http://localhost:8080/api/v1/Region/add
+Content-Type: application/json
+
+{
+  "name": "Qashqa daryo 1"
+}
+
+###            edite region
+PUT http://localhost:8080/api/v1/Region/edite/812788ab-4eab-4c5f-815f-ebbc7e69923c
+Content-Type: application/json
+
+{
+  "name": "Toshkent "
+}
+
+###            delete region
+DELETE http://localhost:8080/api/v1/Region/delete/812788ab-4eab-4c5f-815f-ebbc7e69923c
+
+###                         /*  district test  */
+###            add district
+POST http://localhost:8080/api/v1/district/add/95e448ee-f2ab-413a-a33e-74c4ad3a17ae
+Content-Type: application/json
+
+{
+  "name": "Ishtihon"
+}
+
+###            edite district
+PUT http://localhost:8080/api/v1/district/edite/58dec23d-ce0c-40ab-aaba-7e9856a648fa
+Content-Type: application/json
+
+{
+  "name": "Ishtihon"
+}
+
+###            delete district
+DELETE http://localhost:8080/api/v1/district/delete/5a5a5b90-d730-418e-9aff-d64e4490afa0
+
+###            get by region id
+GET http://localhost:8080/api/v1/district/get-by-region/e7ab9737-a28f-4f52-addf-3a9fd336b6e3
+
+###                         /*  image test   */
+###            get image
+http://localhost:8080/api/v1/image/786265aa-587f-4b43-b284-9e3dbd05bc86
+
+###                         /*  auth test  */
+###            sign up
+POST http://localhost:8080/api/v1/auth/sign-up
+Content-Type: application/json
+
+{
+  "fullName": "Someone",
+  "email": "example2@gmail.com",
+  "password": "Aa1!1234",
+  "rePassword": "Aa1!1234"
+}
+
+###            verification
+POST http://localhost:8080/api/v1/auth/verification/3792
+
+###            sign in
+POST http://localhost:8080/api/v1/auth/sign-in
+Content-Type: application/json
+
+{
+  "email": "user@gmail.com",
+  "password": "Aa1!1234"
+}
+
+###                         /*  Ads test  */
+###            add ads
+POST http://localhost:8080/api/v1/ads/add?regionId=0814d9e2-88ec-47bd-ab29-1a8726160412&
+    districtId=11ed70c7-b727-4523-b2db-6ac1b20dba3c&categoryId=4a0a37b4-4cf7-4407-b5e9-613fbf4e4130
+Content-Type: application/json
+
+{
+  "title": "  PS 2 ni ikkisi SOTILADI   ",
+  "description": " LAPTPBNI BIRI  [   10   ][   10   ][   10   ][   10   ][   10   ][   10   ][   10   ][   10   ]",
+  "price": 0,
+  "phoneNumber": "+998933141592"
+}
+
+###            active ads
+PUT http://localhost:8080/api/v1/ads/active/d76247cf-47c5-491e-9a6c-852d00a800c8
+
+
+###            disable ads
+PUT http://localhost:8080/api/v1/ads/disable/5c528969-4224-4805-8075-e360cf578724
+
+###            delete ads
+DELETE http://localhost:8080/api/v1/ads/delete/09c6fadd-2fd0-4fa8-a753-182464ec7af9
+
+###            get  all
+GET http://localhost:8080/api/v1/ads/get-all?page=0&size=10
+
+###            get by category
+GET http://localhost:8080/api/v1/ads/get-by-category/4a0a37b4-4cf7-4407-b5e9-613fbf4e4130?page=0&size=10
+
+###            get by user
+GET http://localhost:8080/api/v1/ads/get-by-user/09882dc0-5e85-4007-87e7-a65142f59780?page=0&size=10
+
+###            get top
+GET http://localhost:8080/api/v1/ads/top
+
+###            search
+GET http://localhost:8080/api/v1/ads/search/eal?page=0
+
+###            filter
+GET http://localhost:8080/api/v1/ads/filter?category= &key=s22 &region= &district= &maxPrice=1000&minPrice=10
+
+###                         /* comment test */
+###            get by ads id
+GET http://localhost:8080/api/v1/comment/get-by-ads/c2d6abfa-3b51-4f87-93b8-671620bc7f56?page=0
+
+###            write comment
+POST http://localhost:8080/api/v1/comment/write-by-ads/c2d6abfa-3b51-4f87-93b8-671620bc7f56
+Content-Type: application/json
+
+{
+  "text": " narxi qancha ekan"
+}
+
+###            delete comment
+DELETE http://localhost:8080/api/v1/comment/delete/3d925120-d5ab-408e-af61-dfbf684f905f
+
+###                         /* user controller */
+###            edite
+PUT http://localhost:8080/api/v1/user/editProfile
+Content-Type: application/json
+
+{
+  "fullName": null,
+  "oldPassword": "P@$5w0rD",
+  "password": "Aa@1bbbb",
+  "rePassword": "Aa@1bbbb"
+}
+
+###            profile info
+GET http://localhost:8080/api/v1/user/me
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTY5MzYzOTk0NywiZXhwIjoxNjkzNjQzNTQ3fQ.TXZ9IEoibJcTVaGDMrT1FX8GdDSv9_PgjN2WxWZulooVPG1CikBzs4WfnC7MZBytzkIF7F3Myvuvh_Q0XNLRTw
+
+
+###            get all users
+GET http://localhost:8080/api/v1/user/get-all-users
+
+
+###            get all admins
+GET http://localhost:8080/api/v1/user/get-all-admins
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTY5MzYzOTk0NywiZXhwIjoxNjkzNjQzNTQ3fQ.TXZ9IEoibJcTVaGDMrT1FX8GdDSv9_PgjN2WxWZulooVPG1CikBzs4WfnC7MZBytzkIF7F3Myvuvh_Q0XNLRTw"
+
+
+###            admin etib tayinlash
+PUT http://localhost:8080/api/v1/user/appoint-as-admin/a51a8796-5665-4d6c-b358-945a425ce139
+
+
+###            user etib tayinlash
+PUT http://localhost:8080/api/v1/user/assign-as-user/a51a8796-5665-4d6c-b358-945a425ce139
+
+
+###            block user
+PUT http://localhost:8080/api/v1/user/blocking/d170378d-8c39-4b92-b4c6-218acefd7878
+
+
+
+###            userni blockdan chiqarish
+PUT http://localhost:8080/api/v1/user/unblock/d170378d-8c39-4b92-b4c6-218acefd7878
+
+
+###            menig nofaol e'lonlarim
+GET http://localhost:8080/api/v1/user/my-disable-ads

@@ -1,0 +1,60 @@
+                             OLX CLONE
+OPEN PAGES | GUEST
+    auth/
+        /sign-in ,
+        /sign-up ,
+        /verification/5466
+    /category
+        /get-all ,
+    ads/
+        /filter?key= &category= &region= &district= minPrise= MaxPrise=
+        /search/{query}
+        /get-all ,
+        /get-by-category/{category name}
+        /top ,
+        /get-by-user/{user id }
+    comment/
+        /get-by-ads/{ads id}
+    images/
+        /{image id}
+USER
+    ads/
+        /add
+        /delete{id}
+        /active{id}
+        /disable{id}
+    images/
+        /upload
+    comment/
+        /add{id}
+        /delete/{comment id}
+ADMIN
+    region/
+        /add
+        /delete{id}
+        /edite
+        /get{id}
+    district/
+        /add
+        /edite
+        /delete
+        /get{region id }
+    category/
+        /delete
+        /add   ok
+    user/
+    /block/{id}
+    /change-role/user id
+
+  My Tasks
+  1. email sending
+  2. user verification
+  3. jwt token
+  4. role based
+  5. Ads crud
+  6. comment
+====
+No login required <br> /admin, super admin can access
+<b>  </b> <br>
+
+     == [ nimadur o'zgardimi ] ==
