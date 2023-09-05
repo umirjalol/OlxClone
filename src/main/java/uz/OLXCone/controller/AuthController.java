@@ -47,7 +47,7 @@ public class AuthController {
         return authService.signIn(signInDTO);
     }
 
-    @PostMapping(VERIFY)
+    @GetMapping(VERIFY)
     @Operation(summary = "Verify verification code")
     public ApiResult<?> verification(@PathVariable
                                      Integer code) {

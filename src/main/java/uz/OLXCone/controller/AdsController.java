@@ -118,8 +118,7 @@ public class AdsController {
     @Operation(summary = "View full Ad",
             description = "<b> No login required </b> <br>  " +
                     "<b> Advertising information will be returned in full </b> <br> " +
-                    "<b> The number of views will increase </b> <br> ",
-            security = @SecurityRequirement(name = "bearerAuth"))
+                    "<b> The number of views will increase </b> <br> ")
     public ApiResult<?> gatFullAd(@PathVariable String id) {
         return adsService.getFullAd(id);
     }

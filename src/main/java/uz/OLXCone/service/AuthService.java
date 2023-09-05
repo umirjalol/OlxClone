@@ -159,6 +159,7 @@ public class AuthService {
 
     @Scheduled(cron = "0 0 0 * * *")
     public void deleteNeedlessVerify() {
+        System.out.println("::  Scheduled worked now  ::");
         verifyRepository.deleteAllByTimeBefore(
                 Timestamp.valueOf(LocalDateTime.now()
                         .minusHours(1)));
