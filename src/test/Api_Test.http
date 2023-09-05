@@ -37,6 +37,7 @@ GET http://localhost:8080/api/v1/Region/get-all
 POST http://localhost:8080/api/v1/Region/add
 Content-Type: application/json
 
+
 {
   "name": "Qashqa daryo 1"
 }
@@ -54,16 +55,20 @@ DELETE http://localhost:8080/api/v1/Region/delete/812788ab-4eab-4c5f-815f-ebbc7e
 
 ###                         /*  district test  */
 ###            add district
-POST http://localhost:8080/api/v1/district/add/95e448ee-f2ab-413a-a33e-74c4ad3a17ae
+POST http://localhost:8080/api/v1/district/add/d6dca845-5268-4a50-8fa4-eacd69f3f765
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlckFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5MzkxMDQwNiwiZXhwIjoxNjkzOTE0MDA2fQ.tGBNZgz-KmnDei7YbWSHHwAw8eAIg5b1JeYLEmB749oWnTJr0ujbQiCLxK77Jt5A9Urtu-oIlWyWQCuiOJAs-w
+
 
 {
   "name": "Ishtihon"
 }
 
 ###            edite district
-PUT http://localhost:8080/api/v1/district/edite/58dec23d-ce0c-40ab-aaba-7e9856a648fa
+PUT http://localhost:8080/api/v1/district/edite/d6dca845-5268-4a50-8fa4-eacd69f3f765
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlckFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5MzkxMDQwNiwiZXhwIjoxNjkzOTE0MDA2fQ.tGBNZgz-KmnDei7YbWSHHwAw8eAIg5b1JeYLEmB749oWnTJr0ujbQiCLxK77Jt5A9Urtu-oIlWyWQCuiOJAs-w
+
 
 {
   "name": "Ishtihon"
@@ -86,33 +91,35 @@ Content-Type: application/json
 
 {
   "fullName": "Someone",
-  "email": "example2@gmail.com",
+  "email": "example@gmail.com",
   "password": "Aa1!1234",
   "rePassword": "Aa1!1234"
 }
 
 ###            verification
-POST http://localhost:8080/api/v1/auth/verification/3792
+POST http://localhost:8080/api/v1/auth/verification/188811
 
 ###            sign in
 POST http://localhost:8080/api/v1/auth/sign-in
 Content-Type: application/json
 
 {
-  "email": "user@gmail.com",
+  "email": "superAdmin@gmail.com",
   "password": "Aa1!1234"
 }
 
 ###                         /*  Ads test  */
 ###            add ads
-POST http://localhost:8080/api/v1/ads/add?regionId=0814d9e2-88ec-47bd-ab29-1a8726160412&
-    districtId=11ed70c7-b727-4523-b2db-6ac1b20dba3c&categoryId=4a0a37b4-4cf7-4407-b5e9-613fbf4e4130
+POST http://localhost:8080/api/v1/ads/add?regionId=d6dca845-5268-4a50-8fa4-eacd69f3f765&
+    districtId=076908e1-8d60-4bd7-9961-e12020a679a5&categoryId=54a20bed-ac7e-48ba-a463-118b84f9b15c
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlckFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY5MzkxMDQwNiwiZXhwIjoxNjkzOTE0MDA2fQ.tGBNZgz-KmnDei7YbWSHHwAw8eAIg5b1JeYLEmB749oWnTJr0ujbQiCLxK77Jt5A9Urtu-oIlWyWQCuiOJAs-w
+
 
 {
   "title": "  PS 2 ni ikkisi SOTILADI   ",
   "description": " LAPTPBNI BIRI  [   10   ][   10   ][   10   ][   10   ][   10   ][   10   ][   10   ][   10   ]",
-  "price": 0,
+  "price": 155.40,
   "phoneNumber": "+998933141592"
 }
 
@@ -173,7 +180,6 @@ Content-Type: application/json
 
 ###            profile info
 GET http://localhost:8080/api/v1/user/me
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTY5MzYzOTk0NywiZXhwIjoxNjkzNjQzNTQ3fQ.TXZ9IEoibJcTVaGDMrT1FX8GdDSv9_PgjN2WxWZulooVPG1CikBzs4WfnC7MZBytzkIF7F3Myvuvh_Q0XNLRTw
 
 
 ###            get all users
@@ -182,25 +188,22 @@ GET http://localhost:8080/api/v1/user/get-all-users
 
 ###            get all admins
 GET http://localhost:8080/api/v1/user/get-all-admins
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTY5MzYzOTk0NywiZXhwIjoxNjkzNjQzNTQ3fQ.TXZ9IEoibJcTVaGDMrT1FX8GdDSv9_PgjN2WxWZulooVPG1CikBzs4WfnC7MZBytzkIF7F3Myvuvh_Q0XNLRTw"
+
 
 
 ###            admin etib tayinlash
 PUT http://localhost:8080/api/v1/user/appoint-as-admin/a51a8796-5665-4d6c-b358-945a425ce139
 
-
 ###            user etib tayinlash
-PUT http://localhost:8080/api/v1/user/assign-as-user/a51a8796-5665-4d6c-b358-945a425ce139
+PUT http://localhost:8080/api/v1/user/assign-as-user/4a5ddb32-6bbe-49bd-8a0c-ea15ebcdc0fa
 
 
 ###            block user
 PUT http://localhost:8080/api/v1/user/blocking/d170378d-8c39-4b92-b4c6-218acefd7878
 
 
-
 ###            userni blockdan chiqarish
 PUT http://localhost:8080/api/v1/user/unblock/d170378d-8c39-4b92-b4c6-218acefd7878
-
 
 ###            menig nofaol e'lonlarim
 GET http://localhost:8080/api/v1/user/my-disable-ads

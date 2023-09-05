@@ -44,6 +44,9 @@ public interface MyMapper {
     CommentOutDTO commentToCommentOutDTO(Comment comment);
 
     UserInfoDTO userToUserInfoDTO(User user);
+    @Mapping(target ="id" ,ignore = true )
+    @Mapping(target ="isBlocked" ,ignore = true )
+    UserInfoDTO userToUserProfileInfoDTO(User user);
 
     FullAdDTO AdsToFullAdDTO(Ads ad);
 

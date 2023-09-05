@@ -33,7 +33,7 @@ public class UserService {
 
     public ApiResult<?> profileInfo() {
         User user = CommonUtils.getCurrentUser();
-        UserInfoDTO userInfoDTO = mapper.userToUserInfoDTO(user);
+        UserInfoDTO userInfoDTO = mapper.userToUserProfileInfoDTO(user);
         userInfoDTO.setIsBlocked(null);
         return ApiResult.noMessage(true, userInfoDTO);
     }
@@ -147,10 +147,12 @@ public class UserService {
                             UUID.fromString(id));
             if (userOptional.isPresent()) {
                 User user = userOptional.get();
-                user.setRole(role);
-                userRepository.save(user);
-                return ApiResult.noObject(
-                        txt, true);
+                if (!user.getRole().equals(Role.SUPER_ADMIN)) {
+                    user.setRole(role);
+                    userRepository.save(user);
+                    return ApiResult.noObject(
+                            txt, true);
+                }
             }
         }
         return ApiResult.noObject(

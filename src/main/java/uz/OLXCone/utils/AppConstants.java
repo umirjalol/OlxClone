@@ -9,7 +9,7 @@ public interface AppConstants {
     String BEARER = "Bearer ";
     /* Paths */
     String BASE_PATH = "api/v1";
-    String DOMAIN = "http://localhost:8080/";
+    String DOMAIN = "https://olx-clone-a195d4b93d1b.herokuapp.com/";
     String[] OPEN_PAGES = {
             AuthController.PATH + "/**",
             AdsController.PATH + AdsController.TOP,

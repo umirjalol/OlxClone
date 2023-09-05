@@ -14,7 +14,7 @@ public class AdsInDTO {
     private String title;
     @Length(min = 90, max = 200 , message = "description isn't valid")
     private String description;
-    @Max(value = 100_000_000, message = "price is very big")
+    @Max(value = 90_000_000, message = "price is very big")
     @Min(value = 0, message = "price is not negative")
     private Double price;
     @Pattern(regexp = "^\\+998(9[012345789]|6[125679]|7[01234569])[0-9]{7}$"

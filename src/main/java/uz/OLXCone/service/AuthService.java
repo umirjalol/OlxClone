@@ -94,7 +94,7 @@ public class AuthService {
                     User user = verify.getUser();
                     user.setIsBlocked(false);
                     userRepository.save(user);
-                    verifyRepository.delete(verify);
+                    verifyRepository.remove(verify.getId());
                     return ApiResult.noObject(
                             "verified your email",
                             true);
